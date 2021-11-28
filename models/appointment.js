@@ -1,19 +1,19 @@
 const mongoose = require('mongoose')
 
-const subscriberSchema = new mongoose.Schema({
-  name: {
+const appointmentSchema = new mongoose.Schema({
+  date: {
     type: String,
     required: true
   },
-  subscribedToChannel: {
+  time: {
     type: String,
     required: true
   },
-  subscribeDate: {
+  bookingDate: {
     type: Date,
     required: true,
     default: Date.now
   }
 })
 
-module.exports = mongoose.model('Subscriber', subscriberSchema)
+module.exports = mongoose.model('Appointment', appointmentSchema)
