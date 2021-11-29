@@ -74,7 +74,7 @@ async function checkValidation(req, res, next) {
         }
       }
     } else {
-        return res.status(400).json({ message: "Please between 2 to 21 days" })
+        return res.status(400).json({ message: "Please choose a date between 2 days to 3 weeks from now" })
     }
   } catch (err) {
     return res.status(500).json({ message: err.message })
