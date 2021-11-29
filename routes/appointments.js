@@ -68,8 +68,13 @@ async function checkValidation(req, res, next) {
 
   try {
     if ((diff_in_days > 2) && (diff_in_days < 21)) {
-      if (today === 4 || today === 5) {
-        if (diff_in_days !== 3) {
+      if (today === 4 || today === 5 || today === 0) {
+        if (diff_in_days < 3) {
+          return res.status(400).json({ message: "Please allow at least 2 working days" })
+        }
+      }
+      if (today === 6 ) {
+        if (diff_in_days < 4) {
           return res.status(400).json({ message: "Please allow at least 2 working days" })
         }
       }
